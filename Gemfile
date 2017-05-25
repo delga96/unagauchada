@@ -32,7 +32,7 @@ group :production do
   gem 'unicorn'
   gem 'rails_12factor'
 end
-
+gem 'autoprefixer-rails'
 gem 'hirb'
 gem 'ratyrate'
 gem 'will_paginate-bootstrap'
