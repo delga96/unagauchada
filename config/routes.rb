@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  get 'prueba/prueba'
 
-  get 'iniciar/login'
+  get 'user/perfil'
 
-  get 'welcome/index'
-  root 'welcome/index'
+  get 'publicar/publicar_favor'
+
+  get 'login/login'
+
+  get 'register/registrar'
+
+  get 'inicio/index'
+  root 'inicio#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
