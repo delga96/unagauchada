@@ -1,9 +1,9 @@
 class RegisterController < ApplicationController
-  def registrar
+  def usuario
   end
 
 def show
-@registrarse = Registrarse.find(params[:id])
+@usuario = Usuario.find(params[:id])
 end
 
 def create
