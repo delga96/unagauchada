@@ -89,19 +89,34 @@
 
 								<div class="row-fluid">
 								
-									<%= form_for :registrarse do |f| %>
+									<%= form_for :usuario do |f| %>
  									 <p>
-										   <%= f.label :title %><br>
-										    <%= f.text_field :title %>
+										   <%= f.label :nombre %><br>
+										    <%= f.text_field :nombre %>
 	 									 </p>
  
   										<p>
-  											  <%= f.label :text %><br>
-  											  <%= f.text_area :text %>
+  											  <%= f.label :apellido %><br>
+  											  <%= f.text_field :apellido %>
  									 </p>
- 
+ 										<p>
+  											  <%= f.label :mail %><br>
+  											  <%= f.text_field :mail %>
+ 									 </p>
+									  <p>
+  											  <%= f.label :contraseña %><br>
+  											  <%= f.text_field :contraseña %>
+ 									 </p>
+									  <p>
+  											  <%= f.label :telefono %><br>
+  											  <%= f.text_field :telefono %>
+ 									 </p>
+									  <p>
+  											  <%= f.label :foto %><br>
+  											  <%= f.text_field :foto %>
+ 									 </p>
  									 <p>
- 									   <%= f.submit %>
+ 									   <%= f.submit('Registrarse') %>
   									</p>
 						<% end %>
 

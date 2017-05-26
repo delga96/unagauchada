@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get 'login/login'
 	
 resources :articles
+resources :registrarse
+resources :iniciar
+resources :usuario
+resources :moderador
+resources :credito
   get 'register/registrar'
 
   get 'inicio/index'
