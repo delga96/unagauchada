@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'publicar/publicar_favor'
 
   get 'login/login'
-
+	
+resources :articles
   get 'register/registrar'
 
   get 'inicio/index'

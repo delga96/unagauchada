@@ -88,14 +88,22 @@
 							<form method="post" action="">
 
 								<div class="row-fluid">
-
-									<input class="span12" id="user" name="user" type="text" value="" placeholder="Email"/>
-                                    <input class="span12" id="user" name="user" type="text" value="" placeholder="Nombre"/>
-                                    <input class="span12" id="user" name="user" type="text" value="" placeholder="Apellido"/>
-                                    <input class="span12" id="user" name="user" type="text" value="" placeholder="Telefono"/>
-									<input class="span12" id="pass" name="pass" type="text" value="" placeholder="Contraseña"/>
-
-									<input class="span12" id="pass" name="pass" type="text" value="" placeholder="Repite contraseña"/>
+								
+									<%= form_for :registrarse do |f| %>
+ 									 <p>
+										   <%= f.label :title %><br>
+										    <%= f.text_field :title %>
+	 									 </p>
+ 
+  										<p>
+  											  <%= f.label :text %><br>
+  											  <%= f.text_area :text %>
+ 									 </p>
+ 
+ 									 <p>
+ 									   <%= f.submit %>
+  									</p>
+						<% end %>
 
 								</div>
 
@@ -104,7 +112,6 @@
 
 								<div class="actions">
 
-									<button type="submit" class="btn btn-primary span12">Registrarse</button>
 
 								</div>
 
