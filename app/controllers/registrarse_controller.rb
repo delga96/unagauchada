@@ -1,7 +1,4 @@
-class RegisterController < ApplicationController
-  def usuario
-  end
-
+class RegistrarseController < ApplicationController
 def show
 @usuario = Usuario.find(params[:id])
 end
@@ -10,7 +7,7 @@ def create
 @usuario = Usuario.new(usuario_params)
 
 @usuario.save
-get '/inicio'
+redirect_to '/inicio'
   end
 
 private

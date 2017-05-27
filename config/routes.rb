@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get '/perfil'  => 'user#perfil'
-  get '/registrarse'  => 'user#registrarse'
+  get '/registrarse'  => 'registrarse#registrarse'
   post '/user/registrarse' => 'user#create'
   get '/publicar' => 'publicar#publicar_favor'
   get '/inicio' =>  'inicio#index'

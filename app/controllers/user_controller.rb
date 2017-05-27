@@ -1,8 +1,5 @@
 class UserController < ApplicationController
-  def perfil
-  end
- def registrarse
-  end
+ 
 def show
 @usuario = Usuario.find(params[:id])
 end
@@ -11,7 +8,7 @@ def create
 @usuario = Usuario.new(usuario_params)
 
 @usuario.save
-redirect_to @usuario
+redirect_to '/inicio'
   end
 
 private
