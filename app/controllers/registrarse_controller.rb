@@ -12,6 +12,6 @@ redirect_to '/inicio'
 
 private
  def usuario_params
- params.require(:usuario).permit(:nombre,:apellido,:mail,:contraseña,:telefono,:foto,:puntaje)
+ params.require(:usuario).permit(:nombre,:apellido,:email,:contraseña,:telefono,:avatar,:puntaje)
  end
 end

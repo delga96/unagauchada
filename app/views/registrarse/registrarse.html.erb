@@ -89,35 +89,49 @@
 
 								<div class="row-fluid">
 								
-									<%= form_for :usuario do |f| %>
- 									 <p>
-										   <%= f.label :nombre %><br>
-										    <%= f.text_field :nombre %>
-	 									 </p>
+									<%= form_for :usuario, :html => { :multipart => true }  do |f| %>
+ 									  <div class="field">
+   											 <%= f.label :email %><br />
+  											  <%= f.email_field :email, autofocus: true %>
+ 									 </div>
+
+									  <p>
+   											 <%= f.label :nombre %><br>
+   											 <%= f.text_field :nombre %>
+ 									 </p>
+
+									  <p>
+   											 <%= f.label :apellido %><br>
+   											 <%= f.text_field :apellido %>
+ 									 </p>
+
+									  <p>
+   											 <%= f.label :telefono %><br>
+   											 <%= f.text_field :telefono %>
+ 									 </p>
+
  
-  										<p>
-  											  <%= f.label :apellido %><br>
-  											  <%= f.text_field :apellido %>
- 									 </p>
- 										<p>
-  											  <%= f.label :mail %><br>
-  											  <%= f.text_field :mail %>
- 									 </p>
-									  <p>
-  											  <%= f.label :contraseña %><br>
-  											  <%= f.text_field :contraseña %>
- 									 </p>
-									  <p>
-  											  <%= f.label :telefono %><br>
-  											  <%= f.text_field :telefono %>
- 									 </p>
-									  <p>
-  											  <%= f.label :foto %><br>
-  											  <%= f.text_field :foto %>
- 									 </p>
- 									 <p>
- 									   <%= f.submit('Registrarse') %>
-  									</p>
+ 									 <div class="field">
+ 									   <%= f.label :password %>
+ 									   <% if @minimum_password_length %>
+ 									   <em>(<%= @minimum_password_length %> characters minimum)</em>
+ 									   <% end %><br />
+  									   <%= f.password_field :password, autocomplete: "off" %>
+ 									 </div>
+ 
+ 									 <div class="field">
+  										  <%= f.label :password_confirmation %><br />
+ 										   <%= f.password_field :password_confirmation, autocomplete: "off" %>
+ 									 </div>
+ 
+ 									 <div class="field">
+									  <%= f.label :foto %><br />
+  									  <%= f.file_field :avatar %>
+ 									 </div>
+ 
+  									<div class="actions">
+ 										   <%= f.submit "Sign up" %>
+ 									 </div>
 						<% end %>
 
 								</div>

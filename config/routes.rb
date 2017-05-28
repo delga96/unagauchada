@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :usuarios
   get '/perfil'  => 'user#perfil'
   get '/registrarse'  => 'registrarse#registrarse'
   post '/user/registrarse' => 'user#create'
