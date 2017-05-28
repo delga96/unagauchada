@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/registrarse'  => 'registrarse#registrarse'
   post '/user/registrarse' => 'user#create'
   get '/publicar' => 'publicar#publicar_favor'
+  get '/user'  => 'user#perfil'
   get '/inicio' =>  'inicio#index'
   root 'inicio#index'
   get '/login'  => 'login#login'
