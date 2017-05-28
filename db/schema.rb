@@ -11,15 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526161048) do
+ActiveRecord::Schema.define(version: 20170528022420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "compras", force: :cascade do |t|
+    t.string "usuarios"
+    t.string "creditos"
+  end
 
   create_table "creditos", force: :cascade do |t|
     t.integer  "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favors", force: :cascade do |t|
+    t.string   "titulo"
+    t.string   "descripcion"
+    t.string   "foto"
+    t.string   "ciudad"
+    t.date     "fecha_limite"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "usuario_id"
   end
 
   create_table "moderadors", force: :cascade do |t|
@@ -57,4 +73,5 @@ ActiveRecord::Schema.define(version: 20170526161048) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "favors", "usuarios"
 end
