@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  devise_for :usuarios
   get '/perfil'  => 'user#perfil'
   get '/registrarse'  => 'registrarse#registrarse'
   post '/user/registrarse' => 'user#create'
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   root 'inicio#index'
   get '/login'  => 'login#login'
   get '/registration' => 'registration#new'
-	
+
 resources :registrarse
 resources :registration
 resources :iniciar
