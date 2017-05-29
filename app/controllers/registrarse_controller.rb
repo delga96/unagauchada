@@ -1,17 +1,17 @@
 class RegistrarseController < ApplicationController
 def show
-@usuario = Usuario.find(params[:id])
+@user = User.find(params[:id])
 end
 
 def create
-@usuario = Usuario.new(usuario_params)
+@user = User.new(usuario_params)
 
-@usuario.save
+@user.save
 redirect_to '/inicio'
   end
 
 private
  def usuario_params
- params.require(:usuario).permit(:nombre,:apellido,:email,:contraseña,:telefono,:avatar,:puntaje)
+ params.require(:user).permit(:nombre,:apellido,:email,:contraseña,:telefono,:avatar,:puntaje)
  end
 end
