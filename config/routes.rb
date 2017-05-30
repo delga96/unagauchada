@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'inicio#index'
   get '/login'  => 'login#login'
   get '/registration' => 'registration#new'
+  get '/favor/nuevo' => 'favor#nuevo'
 
 resources :registrarse
 resources :registration

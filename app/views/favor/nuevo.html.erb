@@ -56,11 +56,6 @@
 		<!-- start: Page Title -->
 		<div class="row-fluid">
 		
-			<div id="page-title" class="span4 offset4">
-
-				<h2>Registra tu cuenta aqui</h2>
-
-			</div>
 			
 		</div>
 		<!-- end: Page Title -->
@@ -92,18 +87,19 @@
 									<%= form_for :favor, :html => { :multipart => true }  do |f| %>
  									  <div class="field">
    											 <%= f.label :titulo %><br />
-  											  <%= f.titulo_field :titulo, autofocus: true %>
+  											  <%= f.text_field :titulo, autofocus: true %>
  									 </div>
 
 									  <p>
    											 <%= f.label :descripcion %><br>
-   											 <%= f.descripcion_field :descripcion %>
+   											 <%= f.text_field :descripcion %>
  									 </p>
 
 									  <p>
    											 <%= f.label :ciudad %><br>
-   											 <%= f.ciudad_field :ciudad %>
+   											 <%= f.text_field :ciudad %>
  									 </p>
+   									<%= f.label :Fecha_Limite %> <%= f.date_select(:date, :order => [:month, :day, :year]) %>
  
  									 <div class="field">
 									  <%= f.label :foto %><br />
@@ -111,7 +107,7 @@
  									 </div>
  
   									<div class="actions">
- 										   <%= f.submit "Sign up" %>
+ 										   <%= f.submit "publicar" %>
  									 </div>
 						<% end %>
 
