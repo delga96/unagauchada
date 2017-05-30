@@ -4,7 +4,8 @@
 	                  		<li><a href="/favor/nuevo">Publicar favor</a></li>
 							<li><a href="">Ver favores</a></li>
 							<li><a href="">Comprar creditos</a></li>
-  							<li><%= link_to "Cerrar sesion", destroy_user_session_path, :method => :delete %></li>       
+  							<li><%= link_to "Cerrar sesion", destroy_user_session_path, :method => :delete %></li>      
+<li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li> 
 	              			</li>
 							  <% else %>
 							<li ><a href="/login">Iniciar sesion<span>ingrese al sistema</span></a></li>
