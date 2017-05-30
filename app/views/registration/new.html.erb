@@ -89,44 +89,46 @@
 
 								<div class="row-fluid">
 								
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
+  <%= devise_error_messages! %>
 
-						<%= form_tag(user_registration_path,:method => 'post') %>
-<%= devise_error_messages! %>
-<table>
+  <div><%= f.label :nombre %><br />
+<%= f.text_field :nombre %></div>
 
-<tr>
-<td>nombre : </td>
-<td><%=text_field_tag "user[nombre]",@user.nombre %></td>
-</tr>
+ <div><%= f.label :apellido %><br />
+<%= f.text_field :apellido %></div>
 
-<td>apellido : </td>
-<td><%=text_field_tag "user[apellido]",@user.apellido %></td>
-</tr>
+ <div><%= f.label :telefono %><br />
+<%= f.text_field :telefono %></div>
 
-<td>telefono : </td>
-<td><%=text_field_tag "user[telefono]",@user.telefono %></td>
-</tr>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
 
-<tr>
-<td>Email : </td>
-<td><%=email_field_tag "user[email]",@user.email %></td>
-</tr>
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
 
-<tr>
-<td>Password : </td>
-<td><%=password_field_tag "user[password]",@user.password %></td>
-</tr>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
 
-<tr>
-<td>Retype password : </td>
-<td><%=password_field_tag "user[password_confirmation]",@user.password_confirmation %></td>
-</tr>
+<%= f.label :avatar, class: 'col-sm-2 control-label'  %>
+        <div class="field">
+            <%= f.file_field :avatar %>
+        </div>
+  <div class="actions">
+    <%= f.submit "Registrarse" %>
+  </div>
+<% end %>
 
-<tr>
-<td><%= submit_tag nil, :class => "form_submit"%></td>
-</tr>
-</table>
-<br />
+<%= render "devise/shared/links" %>
 
 								</div>
 
